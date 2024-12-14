@@ -2,55 +2,75 @@
 
 ## Examples (the context for the LLM)
 
-1) Argumentation scheme: [features(A1,A,B,C),features(A2,A,B,C),classified(A1,W)],classified(A2,W) 
+1) *Analogy Based on Classification*:
+
+   Argumentation scheme: [features(A1,A,B,C),features(A2,A,B,C),classified(A1,W)],classified(A2,W) 
 
     Example 1: The smartphone model QuantumFlow has the features: a high-resolution camera, an advanced processor, and a large storage capacity. The newer version, QuantumFlow Pro, has also the same features. The smartphone model QuantumFlow is properly classified as a flagship device. So, QuantumFlow Pro ought to be classified as a flagship device too.
    
     [features(smartphone_quantumFlow,high_resolution_camera,advanced_processor,large_storage_capacity),features(smartphone_quantumFlow_Pro,high_resolution_camera,advanced_processor,large_storage_capacity),classified(smartphone_quantumFlow,flagship_device)],classified(smartphone_quantumFlow_Pro,flagship_device)
    
 
-2) Argumentation scheme: [occured(A),followed(occured(A),occurs(B))],occurs(B)
+3) *Effect to Cause*:
+
+   Argumentation scheme: [occured(A),followed(occured(A),occurs(B))],occurs(B)
 
     Example 1: Generally, if a company provides excellent customer service, then customer satisfaction will increase. In this case, the company provides excellent customer service. Therefore, customer satisfaction will increase. 
 
     [occured(provides(company,excellent_customer_service),followed(occured(provides(company,excellent_customer_service)),increases(company,customer_satisfaction))],increases(company,customer_satisfaction)
 
-3) Argumentation scheme: [would_help(A,X),can_carry_out(Y,A),not_too_costly(Y,A)],ought_to_carry_out(Y,A)
+5) *Need for Help*:
+   
+    Argumentation scheme: [would_help(A,X),can_carry_out(Y,A),not_too_costly(Y,A)],ought_to_carry_out(Y,A)
 
     Example 1: More books would help students. Teachers can hand out more books. It's not too costly for teachers to give out more books. Therefore, teachers ought to give out more books. 
   
     [would_help(more_books,students),can_carry_out(teachers,more_books),not_too_costly(teachers,more_books)],ought_to_carry_out(teachers,more_books)
 
 
-4) Argumentation scheme: [has_property(R,P),is_opposite(R,S)],has_property(S,opposite_of(P))
+7) *Argument from Opposities*:
+
+     Argumentation scheme: [has_property(R,P),is_opposite(R,S)],has_property(S,opposite_of(P))
 
      Example 1: Fire has the property of hot. Fire is the opposite of ice. Therefore, ice has the opposite of hot as a property.
 
      [has_property(fire,hot),is_opposite(fire,ice)],has_property(ice,opposite_of(hot))
 
-5) Argumentation scheme: [everybody_who_is(Y,accept(P)),goal_of(X,Y)],should(X,accept(P))
+9) *Moral Justification Ad Populum Argument*:
+
+    Argumentation scheme: [everybody_who_is(Y,accept(P)),goal_of(X,Y)],should(X,accept(P))
 
     Example 1: Everybody who is compassionate accepts forgiveness. John's goal is to be compassionate. Therefore, John should accept forgiveness.
 
      [everybody_who_is(compassionate,accept(forgiveness)),goal_of(john,compassionate)],should(john,accept(forgiveness))
 
-6) Argumentation scheme: [classification(F,G),be(A,F)],be(A,G)
+11) *Classification*:
+
+     Argumentation scheme: [classification(F,G),be(A,F)],be(A,G)
 
      Example 1: All eagles are birds. White eagles are eagles. Therefore, white eagles are birds.
 
      [classification(eagle,bird),be(white_eagle,eagle)],be(white_eagle,bird)
 
-7) Argumentation scheme: [goal(Sn),necessary_condition(Sn,Si)],is_necessary(Si)
+13) *Necessary Condition*:
+
+     Argumentation scheme: [goal(Sn),necessary_condition(Sn,Si)],is_necessary(Si)
 
      Example 1: Pursuing advancements in renewable energy technology is my objective. In order to realize this, investing in solar power infrastructure is necessary. Therefore, I need to invest in solar power infrastructure.
    
      [goal(pursue(advancements,renewable_energy_techonology)),necessary_condition(pursue(advancements,renewable_energy_techonology),invest(solar_power_infrastructure))],is_necessary(invest(solar_power_infrastructure))
 
-8) Argumentation scheme: [position_to_know(A,S),asserts(A,Ar),contain(S,Ar)],Ar.
+15) *Position to Know*:
+
+     Argumentation scheme: [position_to_know(A,S),asserts(A,Ar),contain(S,Ar)],Ar.
 
      Example 1: Daniel is a meteorologist and claims that low pressure systems often bring stormy weather, so we can deduce that low pressure systems often bring stormy weather.
 
      [position_to_know("Daniel",meteorology),asserts("Daniel",brings(low_pressure_systems,stormy_weather)),contain(meteorology,brings(low_pressure_systems,stormy_weather))],brings(low_pressure_systems,stormy_weather)
+
+
+
+
 
 
 ## Tests
