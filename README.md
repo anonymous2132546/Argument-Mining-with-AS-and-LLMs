@@ -73,7 +73,7 @@
 
 
 
-## Tests
+## "Argument from Position to Know" tests
 
 1) **Natural Language Text**: E-Books: A Game-Changer for Learning? Dr. Samuel Harper's Perspective. Dr. Samuel Harper, a seasoned educational psychologist with over two decades of experience, is in a position to know about the effects of e-books on learning outcomes. Drawing on his extensive research in the field of educational technology, Dr. Harper asserts, "E-books can enhance comprehension and engagement." Based on his expertise and assertion, the conclusion follows: E-books can enhance comprehension and engagement.
    
